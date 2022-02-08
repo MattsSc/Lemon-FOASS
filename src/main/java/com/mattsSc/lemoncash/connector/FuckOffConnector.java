@@ -20,8 +20,7 @@ public class FuckOffConnector {
     private final RestTemplate restTemplate;
 
     public String getMessage(String company, String name, String from){
-        throw new RuntimeException();
-        //return callFuckOffService(String.format(configuration.getNameCompanyUrl(), name, company, from));
+        return callFuckOffService(String.format(configuration.getNameCompanyUrl(), name, company, from));
     }
 
 
