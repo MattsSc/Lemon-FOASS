@@ -1,6 +1,6 @@
 package com.mattsSc.lemoncash.controller;
 
-import com.mattsSc.lemoncash.service.FuckOffService;
+import com.mattsSc.lemoncash.service.MessageService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.vavr.control.Try;
@@ -22,7 +22,7 @@ import java.util.Objects;
 public class MessageController {
 
     @Autowired
-    private FuckOffService fuckOffService;
+    private MessageService fuckOffService;
 
     @ApiOperation(value = "obtain message", notes = "Get message from FOAAS")
     @GetMapping

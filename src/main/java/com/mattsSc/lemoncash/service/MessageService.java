@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Service
 @Slf4j
-public class FuckOffService {
+public class MessageService {
 
     private final FuckOffConnector fuckOffConnector;
 
@@ -29,14 +29,14 @@ public class FuckOffService {
 
     public String getMessageForCompany(String company, String from){
         log.info(String.format("FOAAS - Get mesage for company %s",company));
-        return Try.of(() -> fuckOffConnector.getMessage(company, from, true))
+        return Try.of(() -> fuckOffConnector.getMessageForCompany(company, from))
                 .onFailure(ex -> log.error("FOASS - Connection error" , ex))
                 .get();
     }
 
     public String getMessageForName(String name, String from){
         log.info(String.format("FOAAS - Get mesage for name %s", name));
-        return Try.of(() -> fuckOffConnector.getMessage(name, from, false))
+        return Try.of(() -> fuckOffConnector.getMessageForName(name, from))
                 .onFailure(ex -> log.error("FOASS - Connection error" , ex))
                 .get();
     }

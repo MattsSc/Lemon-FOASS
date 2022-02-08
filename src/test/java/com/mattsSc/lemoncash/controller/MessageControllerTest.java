@@ -1,6 +1,6 @@
 package com.mattsSc.lemoncash.controller;
 
-import com.mattsSc.lemoncash.service.FuckOffService;
+import com.mattsSc.lemoncash.service.MessageService;
 import com.mattsSc.lemoncash.utils.redis.RedisOperation;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -27,7 +27,7 @@ public class MessageControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private FuckOffService fuckOffService;
+    private MessageService fuckOffService;
 
     @MockBean
     private RedisOperation redisOperation;
