@@ -24,11 +24,12 @@ public class FuckOffConnector {
     }
 
 
-    public String getMessage(String parameter, String from, boolean isCompany){
+    public String getMessageForCompany(String company, String from){
+        return callFuckOffService(String.format(configuration.getCompanyUrl() , company, from));
+    }
 
-        String endpointUrl = isCompany ? configuration.getCompanyUrl() : configuration.getNameUrl();
-
-        return callFuckOffService(String.format(endpointUrl, parameter, from));
+    public String getMessageForName(String name, String from){
+        return callFuckOffService(String.format(configuration.getNameUrl(), name, from));
     }
 
     public String getMessage(String from){
