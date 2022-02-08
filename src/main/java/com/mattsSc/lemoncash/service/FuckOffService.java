@@ -2,21 +2,16 @@ package com.mattsSc.lemoncash.service;
 
 import com.mattsSc.lemoncash.connector.FuckOffConnector;
 import io.vavr.control.Try;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+@RequiredArgsConstructor
 @Service
 @Slf4j
 public class FuckOffService {
 
-    private FuckOffConnector fuckOffConnector;
-
-    @Autowired
-    public FuckOffService(FuckOffConnector fuckOffConnector) {
-        this.fuckOffConnector = fuckOffConnector;
-    }
-
+    private final FuckOffConnector fuckOffConnector;
 
     public String getMessage(String company, String name, String from){
         log.info(String.format("FOAAS - Get mesage for company %s and name %s",company, name));
