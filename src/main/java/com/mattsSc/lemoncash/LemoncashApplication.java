@@ -20,11 +20,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @ComponentScan(basePackages = {"com.mattsSc.lemoncash"})
 public class LemoncashApplication {
 
-	@RequestMapping("/")
-	public String home() {
-		return "Hello Docker World";
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(LemoncashApplication.class, args);
 	}
