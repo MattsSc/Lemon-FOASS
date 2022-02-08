@@ -24,7 +24,12 @@ public class AppConfig {
     }
 
     @Bean
-    LettuceConnectionFactory lettuceConnectionFactory(@Value("${spring.redis.host}") final String host, @Value("${spring.redis.port}") final Integer port){
+    public RestTemplate restTemplate(){
+        return new RestTemplate();
+    }
+
+    @Bean
+    public LettuceConnectionFactory lettuceConnectionFactory(@Value("${spring.redis.host}") final String host, @Value("${spring.redis.port}") final Integer port){
         return new LettuceConnectionFactory(host, port);
     }
 
